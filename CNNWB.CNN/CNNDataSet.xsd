@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CNNDataSet" targetNamespace="http://tempuri.org/CNNDataSet.xsd" xmlns:mstns="http://tempuri.org/CNNDataSet.xsd" xmlns="http://tempuri.org/CNNDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="NeuralNetworkConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="NeuralNetworkConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.CNNWB.CNN.Properties.Settings.GlobalReference.Default.NeuralNetworkConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CNNDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="CNNDataSet" msprop:Generator_UserDSName="CNNDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ActivationFunctions" msprop:Generator_TableClassName="ActivationFunctionsDataTable" msprop:Generator_TableVarName="tableActivationFunctions" msprop:Generator_RowChangedName="ActivationFunctionsRowChanged" msprop:Generator_TablePropName="ActivationFunctions" msprop:Generator_RowDeletingName="ActivationFunctionsRowDeleting" msprop:Generator_RowChangingName="ActivationFunctionsRowChanging" msprop:Generator_RowEvHandlerName="ActivationFunctionsRowChangeEventHandler" msprop:Generator_RowDeletedName="ActivationFunctionsRowDeleted" msprop:Generator_RowClassName="ActivationFunctionsRow" msprop:Generator_UserTableName="ActivationFunctions" msprop:Generator_RowEvArgName="ActivationFunctionsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ActivationFunction" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnActivationFunction" msprop:Generator_ColumnPropNameInRow="ActivationFunction" msprop:Generator_ColumnPropNameInTable="ActivationFunctionColumn" msprop:Generator_UserColumnName="ActivationFunction" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Connections" msprop:Generator_TableClassName="ConnectionsDataTable" msprop:Generator_TableVarName="tableConnections" msprop:Generator_RowChangedName="ConnectionsRowChanged" msprop:Generator_TablePropName="Connections" msprop:Generator_RowDeletingName="ConnectionsRowDeleting" msprop:Generator_RowChangingName="ConnectionsRowChanging" msprop:Generator_RowEvHandlerName="ConnectionsRowChangeEventHandler" msprop:Generator_RowDeletedName="ConnectionsRowDeleted" msprop:Generator_RowClassName="ConnectionsRow" msprop:Generator_UserTableName="Connections" msprop:Generator_RowEvArgName="ConnectionsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NetworkIndex" msprop:Generator_ColumnVarNameInTable="columnNetworkIndex" msprop:Generator_ColumnPropNameInRow="NetworkIndex" msprop:Generator_ColumnPropNameInTable="NetworkIndexColumn" msprop:Generator_UserColumnName="NetworkIndex" type="xs:unsignedByte" />
+              <xs:element name="LayerIndex" msprop:Generator_ColumnVarNameInTable="columnLayerIndex" msprop:Generator_ColumnPropNameInRow="LayerIndex" msprop:Generator_ColumnPropNameInTable="LayerIndexColumn" msprop:Generator_UserColumnName="LayerIndex" type="xs:unsignedByte" />
+              <xs:element name="NeuronIndex" msprop:Generator_ColumnVarNameInTable="columnNeuronIndex" msprop:Generator_ColumnPropNameInRow="NeuronIndex" msprop:Generator_ColumnPropNameInTable="NeuronIndexColumn" msprop:Generator_UserColumnName="NeuronIndex" type="xs:int" />
+              <xs:element name="ConnectionIndex" msprop:Generator_ColumnVarNameInTable="columnConnectionIndex" msprop:Generator_ColumnPropNameInRow="ConnectionIndex" msprop:Generator_ColumnPropNameInTable="ConnectionIndexColumn" msprop:Generator_UserColumnName="ConnectionIndex" type="xs:int" />
+              <xs:element name="ToNeuronIndex" msprop:Generator_ColumnVarNameInTable="columnToNeuronIndex" msprop:Generator_ColumnPropNameInRow="ToNeuronIndex" msprop:Generator_ColumnPropNameInTable="ToNeuronIndexColumn" msprop:Generator_UserColumnName="ToNeuronIndex" type="xs:int" />
+              <xs:element name="ToWeightIndex" msprop:Generator_ColumnVarNameInTable="columnToWeightIndex" msprop:Generator_ColumnPropNameInRow="ToWeightIndex" msprop:Generator_ColumnPropNameInTable="ToWeightIndexColumn" msprop:Generator_UserColumnName="ToWeightIndex" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DataProviderSets" msprop:Generator_TableClassName="DataProviderSetsDataTable" msprop:Generator_TableVarName="tableDataProviderSets" msprop:Generator_RowChangedName="DataProviderSetsRowChanged" msprop:Generator_TablePropName="DataProviderSets" msprop:Generator_RowDeletingName="DataProviderSetsRowDeleting" msprop:Generator_RowChangingName="DataProviderSetsRowChanging" msprop:Generator_RowEvHandlerName="DataProviderSetsRowChangeEventHandler" msprop:Generator_RowDeletedName="DataProviderSetsRowDeleted" msprop:Generator_RowClassName="DataProviderSetsRow" msprop:Generator_UserTableName="DataProviderSets" msprop:Generator_RowEvArgName="DataProviderSetsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DataProviderSet" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnDataProviderSet" msprop:Generator_ColumnPropNameInRow="DataProviderSet" msprop:Generator_ColumnPropNameInTable="DataProviderSetColumn" msprop:Generator_UserColumnName="DataProviderSet" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Layers" msprop:Generator_TableClassName="LayersDataTable" msprop:Generator_TableVarName="tableLayers" msprop:Generator_RowChangedName="LayersRowChanged" msprop:Generator_TablePropName="Layers" msprop:Generator_RowDeletingName="LayersRowDeleting" msprop:Generator_RowChangingName="LayersRowChanging" msprop:Generator_RowEvHandlerName="LayersRowChangeEventHandler" msprop:Generator_RowDeletedName="LayersRowDeleted" msprop:Generator_RowClassName="LayersRow" msprop:Generator_UserTableName="Layers" msprop:Generator_RowEvArgName="LayersRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NetworkIndex" msprop:Generator_ColumnVarNameInTable="columnNetworkIndex" msprop:Generator_ColumnPropNameInRow="NetworkIndex" msprop:Generator_ColumnPropNameInTable="NetworkIndexColumn" msprop:Generator_UserColumnName="NetworkIndex" type="xs:unsignedByte" />
+              <xs:element name="LayerIndex" msprop:Generator_ColumnVarNameInTable="columnLayerIndex" msprop:Generator_ColumnPropNameInRow="LayerIndex" msprop:Generator_ColumnPropNameInTable="LayerIndexColumn" msprop:Generator_UserColumnName="LayerIndex" type="xs:unsignedByte" />
+              <xs:element name="LayerType" msprop:Generator_ColumnVarNameInTable="columnLayerType" msprop:Generator_ColumnPropNameInRow="LayerType" msprop:Generator_ColumnPropNameInTable="LayerTypeColumn" msprop:Generator_UserColumnName="LayerType" type="xs:int" />
+              <xs:element name="ActivationFunction" msprop:Generator_ColumnVarNameInTable="columnActivationFunction" msprop:Generator_ColumnPropNameInRow="ActivationFunction" msprop:Generator_ColumnPropNameInTable="ActivationFunctionColumn" msprop:Generator_UserColumnName="ActivationFunction" type="xs:int" />
+              <xs:element name="NeuronCount" msprop:Generator_ColumnVarNameInTable="columnNeuronCount" msprop:Generator_ColumnPropNameInRow="NeuronCount" msprop:Generator_ColumnPropNameInTable="NeuronCountColumn" msprop:Generator_UserColumnName="NeuronCount" type="xs:int" />
+              <xs:element name="UseMapInfo" msprop:Generator_ColumnVarNameInTable="columnUseMapInfo" msprop:Generator_ColumnPropNameInRow="UseMapInfo" msprop:Generator_ColumnPropNameInTable="UseMapInfoColumn" msprop:Generator_UserColumnName="UseMapInfo" type="xs:boolean" />
+              <xs:element name="MapCount" msprop:Generator_ColumnVarNameInTable="columnMapCount" msprop:Generator_ColumnPropNameInRow="MapCount" msprop:Generator_ColumnPropNameInTable="MapCountColumn" msprop:Generator_UserColumnName="MapCount" type="xs:int" />
+              <xs:element name="MapWidth" msprop:Generator_ColumnVarNameInTable="columnMapWidth" msprop:Generator_ColumnPropNameInRow="MapWidth" msprop:Generator_ColumnPropNameInTable="MapWidthColumn" msprop:Generator_UserColumnName="MapWidth" type="xs:int" />
+              <xs:element name="MapHeight" msprop:Generator_ColumnVarNameInTable="columnMapHeight" msprop:Generator_ColumnPropNameInRow="MapHeight" msprop:Generator_ColumnPropNameInTable="MapHeightColumn" msprop:Generator_UserColumnName="MapHeight" type="xs:int" />
+              <xs:element name="ReceptiveFieldWidth" msprop:Generator_ColumnVarNameInTable="columnReceptiveFieldWidth" msprop:Generator_ColumnPropNameInRow="ReceptiveFieldWidth" msprop:Generator_ColumnPropNameInTable="ReceptiveFieldWidthColumn" msprop:Generator_UserColumnName="ReceptiveFieldWidth" type="xs:int" minOccurs="0" />
+              <xs:element name="ReceptiveFieldHeight" msprop:Generator_ColumnVarNameInTable="columnReceptiveFieldHeight" msprop:Generator_ColumnPropNameInRow="ReceptiveFieldHeight" msprop:Generator_ColumnPropNameInTable="ReceptiveFieldHeightColumn" msprop:Generator_UserColumnName="ReceptiveFieldHeight" type="xs:int" minOccurs="0" />
+              <xs:element name="StrideX" msprop:Generator_ColumnVarNameInTable="columnStrideX" msprop:Generator_ColumnPropNameInRow="StrideX" msprop:Generator_ColumnPropNameInTable="StrideXColumn" msprop:Generator_UserColumnName="StrideX" type="xs:int" />
+              <xs:element name="StrideY" msprop:Generator_ColumnVarNameInTable="columnStrideY" msprop:Generator_ColumnPropNameInRow="StrideY" msprop:Generator_ColumnPropNameInTable="StrideYColumn" msprop:Generator_UserColumnName="StrideY" type="xs:int" />
+              <xs:element name="PadX" msprop:Generator_ColumnVarNameInTable="columnPadX" msprop:Generator_ColumnPropNameInRow="PadX" msprop:Generator_ColumnPropNameInTable="PadXColumn" msprop:Generator_UserColumnName="PadX" type="xs:int" />
+              <xs:element name="PadY" msprop:Generator_ColumnVarNameInTable="columnPadY" msprop:Generator_ColumnPropNameInRow="PadY" msprop:Generator_ColumnPropNameInTable="PadYColumn" msprop:Generator_UserColumnName="PadY" type="xs:int" />
+              <xs:element name="IsFullyMapped" msprop:Generator_ColumnVarNameInTable="columnIsFullyMapped" msprop:Generator_ColumnPropNameInRow="IsFullyMapped" msprop:Generator_ColumnPropNameInTable="IsFullyMappedColumn" msprop:Generator_UserColumnName="IsFullyMapped" type="xs:boolean" />
+              <xs:element name="LockedWeights" msprop:Generator_ColumnVarNameInTable="columnLockedWeights" msprop:Generator_ColumnPropNameInRow="LockedWeights" msprop:Generator_ColumnPropNameInTable="LockedWeightsColumn" msprop:Generator_UserColumnName="LockedWeights" type="xs:boolean" />
+              <xs:element name="UseDropOut" msprop:Generator_ColumnVarNameInTable="columnUseDropOut" msprop:Generator_ColumnPropNameInRow="UseDropOut" msprop:Generator_ColumnPropNameInTable="UseDropOutColumn" msprop:Generator_UserColumnName="UseDropOut" type="xs:boolean" />
+              <xs:element name="DropOutPercentage" msprop:Generator_ColumnVarNameInTable="columnDropOutPercentage" msprop:Generator_ColumnPropNameInRow="DropOutPercentage" msprop:Generator_ColumnPropNameInTable="DropOutPercentageColumn" msprop:Generator_UserColumnName="DropOutPercentage" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LayerTypes" msprop:Generator_TableClassName="LayerTypesDataTable" msprop:Generator_TableVarName="tableLayerTypes" msprop:Generator_RowChangedName="LayerTypesRowChanged" msprop:Generator_TablePropName="LayerTypes" msprop:Generator_RowDeletingName="LayerTypesRowDeleting" msprop:Generator_RowChangingName="LayerTypesRowChanging" msprop:Generator_RowEvHandlerName="LayerTypesRowChangeEventHandler" msprop:Generator_RowDeletedName="LayerTypesRowDeleted" msprop:Generator_RowClassName="LayerTypesRow" msprop:Generator_UserTableName="LayerTypes" msprop:Generator_RowEvArgName="LayerTypesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LayerType" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnLayerType" msprop:Generator_ColumnPropNameInRow="LayerType" msprop:Generator_ColumnPropNameInTable="LayerTypeColumn" msprop:Generator_UserColumnName="LayerType" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="LossFunctions" msprop:Generator_TableClassName="LossFunctionsDataTable" msprop:Generator_TableVarName="tableLossFunctions" msprop:Generator_RowChangedName="LossFunctionsRowChanged" msprop:Generator_TablePropName="LossFunctions" msprop:Generator_RowDeletingName="LossFunctionsRowDeleting" msprop:Generator_RowChangingName="LossFunctionsRowChanging" msprop:Generator_RowEvHandlerName="LossFunctionsRowChangeEventHandler" msprop:Generator_RowDeletedName="LossFunctionsRowDeleted" msprop:Generator_RowClassName="LossFunctionsRow" msprop:Generator_UserTableName="LossFunctions" msprop:Generator_RowEvArgName="LossFunctionsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LossFunction" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnLossFunction" msprop:Generator_ColumnPropNameInRow="LossFunction" msprop:Generator_ColumnPropNameInTable="LossFunctionColumn" msprop:Generator_UserColumnName="LossFunction" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Mappings" msprop:Generator_TableClassName="MappingsDataTable" msprop:Generator_TableVarName="tableMappings" msprop:Generator_RowChangedName="MappingsRowChanged" msprop:Generator_TablePropName="Mappings" msprop:Generator_RowDeletingName="MappingsRowDeleting" msprop:Generator_RowChangingName="MappingsRowChanging" msprop:Generator_RowEvHandlerName="MappingsRowChangeEventHandler" msprop:Generator_RowDeletedName="MappingsRowDeleted" msprop:Generator_RowClassName="MappingsRow" msprop:Generator_UserTableName="Mappings" msprop:Generator_RowEvArgName="MappingsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NetworkIndex" msprop:Generator_ColumnVarNameInTable="columnNetworkIndex" msprop:Generator_ColumnPropNameInRow="NetworkIndex" msprop:Generator_ColumnPropNameInTable="NetworkIndexColumn" msprop:Generator_UserColumnName="NetworkIndex" type="xs:unsignedByte" />
+              <xs:element name="LayerIndex" msprop:Generator_ColumnVarNameInTable="columnLayerIndex" msprop:Generator_ColumnPropNameInRow="LayerIndex" msprop:Generator_ColumnPropNameInTable="LayerIndexColumn" msprop:Generator_UserColumnName="LayerIndex" type="xs:unsignedByte" />
+              <xs:element name="PreviousMapIndex" msprop:Generator_ColumnVarNameInTable="columnPreviousMapIndex" msprop:Generator_ColumnPropNameInRow="PreviousMapIndex" msprop:Generator_ColumnPropNameInTable="PreviousMapIndexColumn" msprop:Generator_UserColumnName="PreviousMapIndex" type="xs:int" />
+              <xs:element name="CurrentMapIndex" msprop:Generator_ColumnVarNameInTable="columnCurrentMapIndex" msprop:Generator_ColumnPropNameInRow="CurrentMapIndex" msprop:Generator_ColumnPropNameInTable="CurrentMapIndexColumn" msprop:Generator_UserColumnName="CurrentMapIndex" type="xs:int" />
+              <xs:element name="IsMapped" msprop:Generator_ColumnVarNameInTable="columnIsMapped" msprop:Generator_ColumnPropNameInRow="IsMapped" msprop:Generator_ColumnPropNameInTable="IsMappedColumn" msprop:Generator_UserColumnName="IsMapped" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="NeuralNetworks" msprop:Generator_TableClassName="NeuralNetworksDataTable" msprop:Generator_TableVarName="tableNeuralNetworks" msprop:Generator_RowChangedName="NeuralNetworksRowChanged" msprop:Generator_TablePropName="NeuralNetworks" msprop:Generator_RowDeletingName="NeuralNetworksRowDeleting" msprop:Generator_RowChangingName="NeuralNetworksRowChanging" msprop:Generator_RowEvHandlerName="NeuralNetworksRowChangeEventHandler" msprop:Generator_RowDeletedName="NeuralNetworksRowDeleted" msprop:Generator_RowClassName="NeuralNetworksRow" msprop:Generator_UserTableName="NeuralNetworks" msprop:Generator_RowEvArgName="NeuralNetworksRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NetworkIndex" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNetworkIndex" msprop:Generator_ColumnPropNameInRow="NetworkIndex" msprop:Generator_ColumnPropNameInTable="NetworkIndexColumn" msprop:Generator_UserColumnName="NetworkIndex" type="xs:unsignedByte" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ClassCount" msprop:Generator_ColumnVarNameInTable="columnClassCount" msprop:Generator_ColumnPropNameInRow="ClassCount" msprop:Generator_ColumnPropNameInTable="ClassCountColumn" msprop:Generator_UserColumnName="ClassCount" type="xs:int" />
+              <xs:element name="DataProviderSet" msprop:Generator_ColumnVarNameInTable="columnDataProviderSet" msprop:Generator_ColumnPropNameInRow="DataProviderSet" msprop:Generator_ColumnPropNameInTable="DataProviderSetColumn" msprop:Generator_UserColumnName="DataProviderSet" type="xs:int" />
+              <xs:element name="TrainingStrategy" msprop:Generator_ColumnVarNameInTable="columnTrainingStrategy" msprop:Generator_ColumnPropNameInRow="TrainingStrategy" msprop:Generator_ColumnPropNameInTable="TrainingStrategyColumn" msprop:Generator_UserColumnName="TrainingStrategy" type="xs:int" />
+              <xs:element name="DMicron" msprop:Generator_ColumnVarNameInTable="columnDMicron" msprop:Generator_ColumnPropNameInRow="DMicron" msprop:Generator_ColumnPropNameInTable="DMicronColumn" msprop:Generator_UserColumnName="DMicron" type="xs:double" />
+              <xs:element name="TrainToValue" msprop:Generator_ColumnVarNameInTable="columnTrainToValue" msprop:Generator_ColumnPropNameInRow="TrainToValue" msprop:Generator_ColumnPropNameInTable="TrainToValueColumn" msprop:Generator_UserColumnName="TrainToValue" type="xs:double" />
+              <xs:element name="LossFunction" msprop:Generator_ColumnVarNameInTable="columnLossFunction" msprop:Generator_ColumnPropNameInRow="LossFunction" msprop:Generator_ColumnPropNameInTable="LossFunctionColumn" msprop:Generator_UserColumnName="LossFunction" type="xs:int" />
+              <xs:element name="DropOutUsed" msprop:Generator_ColumnVarNameInTable="columnDropOutUsed" msprop:Generator_ColumnPropNameInRow="DropOutUsed" msprop:Generator_ColumnPropNameInTable="DropOutUsedColumn" msprop:Generator_UserColumnName="DropOutUsed" type="xs:boolean" />
+              <xs:element name="SubstractMean" msprop:Generator_ColumnVarNameInTable="columnSubstractMean" msprop:Generator_ColumnPropNameInRow="SubstractMean" msprop:Generator_ColumnPropNameInTable="SubstractMeanColumn" msprop:Generator_UserColumnName="SubstractMean" type="xs:boolean" default="false" />
+              <xs:element name="HessianSamples" msprop:Generator_ColumnVarNameInTable="columnHessianSamples" msprop:Generator_ColumnPropNameInRow="HessianSamples" msprop:Generator_ColumnPropNameInTable="HessianSamplesColumn" msprop:Generator_UserColumnName="HessianSamples" type="xs:int" default="2000" />
+              <xs:element name="Min" msprop:Generator_ColumnVarNameInTable="columnMin" msprop:Generator_ColumnPropNameInRow="Min" msprop:Generator_ColumnPropNameInTable="MinColumn" msprop:Generator_UserColumnName="Min" type="xs:double" default="-1" />
+              <xs:element name="Max" msprop:Generator_ColumnVarNameInTable="columnMax" msprop:Generator_ColumnPropNameInRow="Max" msprop:Generator_ColumnPropNameInTable="MaxColumn" msprop:Generator_UserColumnName="Max" type="xs:double" default="1" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Neurons" msprop:Generator_TableClassName="NeuronsDataTable" msprop:Generator_TableVarName="tableNeurons" msprop:Generator_RowChangedName="NeuronsRowChanged" msprop:Generator_TablePropName="Neurons" msprop:Generator_RowDeletingName="NeuronsRowDeleting" msprop:Generator_RowChangingName="NeuronsRowChanging" msprop:Generator_RowEvHandlerName="NeuronsRowChangeEventHandler" msprop:Generator_RowDeletedName="NeuronsRowDeleted" msprop:Generator_RowClassName="NeuronsRow" msprop:Generator_UserTableName="Neurons" msprop:Generator_RowEvArgName="NeuronsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NetworkIndex" msprop:Generator_ColumnVarNameInTable="columnNetworkIndex" msprop:Generator_ColumnPropNameInRow="NetworkIndex" msprop:Generator_ColumnPropNameInTable="NetworkIndexColumn" msprop:Generator_UserColumnName="NetworkIndex" type="xs:unsignedByte" />
+              <xs:element name="LayerIndex" msprop:Generator_ColumnVarNameInTable="columnLayerIndex" msprop:Generator_ColumnPropNameInRow="LayerIndex" msprop:Generator_ColumnPropNameInTable="LayerIndexColumn" msprop:Generator_UserColumnName="LayerIndex" type="xs:unsignedByte" />
+              <xs:element name="NeuronIndex" msprop:Generator_ColumnVarNameInTable="columnNeuronIndex" msprop:Generator_ColumnPropNameInRow="NeuronIndex" msprop:Generator_ColumnPropNameInTable="NeuronIndexColumn" msprop:Generator_UserColumnName="NeuronIndex" type="xs:int" />
+              <xs:element name="Output" msprop:Generator_ColumnVarNameInTable="columnOutput" msprop:Generator_ColumnPropNameInRow="Output" msprop:Generator_ColumnPropNameInTable="OutputColumn" msprop:Generator_UserColumnName="Output" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TrainingRates" msprop:Generator_TableClassName="TrainingRatesDataTable" msprop:Generator_TableVarName="tableTrainingRates" msprop:Generator_RowChangedName="TrainingRatesRowChanged" msprop:Generator_TablePropName="TrainingRates" msprop:Generator_RowDeletingName="TrainingRatesRowDeleting" msprop:Generator_RowChangingName="TrainingRatesRowChanging" msprop:Generator_RowEvHandlerName="TrainingRatesRowChangeEventHandler" msprop:Generator_RowDeletedName="TrainingRatesRowDeleted" msprop:Generator_RowClassName="TrainingRatesRow" msprop:Generator_UserTableName="TrainingRates" msprop:Generator_RowEvArgName="TrainingRatesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Rate" msprop:Generator_ColumnVarNameInTable="columnRate" msprop:Generator_ColumnPropNameInRow="Rate" msprop:Generator_ColumnPropNameInTable="RateColumn" msprop:Generator_UserColumnName="Rate" type="xs:double" />
+              <xs:element name="Epochs" msprop:Generator_ColumnVarNameInTable="columnEpochs" msprop:Generator_ColumnPropNameInRow="Epochs" msprop:Generator_ColumnPropNameInTable="EpochsColumn" msprop:Generator_UserColumnName="Epochs" type="xs:int" />
+              <xs:element name="MinimumRate" msprop:Generator_ColumnVarNameInTable="columnMinimumRate" msprop:Generator_ColumnPropNameInRow="MinimumRate" msprop:Generator_ColumnPropNameInTable="MinimumRateColumn" msprop:Generator_UserColumnName="MinimumRate" type="xs:double" />
+              <xs:element name="WeightDecayFactor" msprop:Generator_ColumnVarNameInTable="columnWeightDecayFactor" msprop:Generator_ColumnPropNameInRow="WeightDecayFactor" msprop:Generator_ColumnPropNameInTable="WeightDecayFactorColumn" msprop:Generator_UserColumnName="WeightDecayFactor" type="xs:double" />
+              <xs:element name="Momentum" msprop:Generator_ColumnVarNameInTable="columnMomentum" msprop:Generator_ColumnPropNameInRow="Momentum" msprop:Generator_ColumnPropNameInTable="MomentumColumn" msprop:Generator_UserColumnName="Momentum" type="xs:double" />
+              <xs:element name="BatchSize" msprop:Generator_ColumnVarNameInTable="columnBatchSize" msprop:Generator_ColumnPropNameInRow="BatchSize" msprop:Generator_ColumnPropNameInTable="BatchSizeColumn" msprop:Generator_UserColumnName="BatchSize" type="xs:int" default="1" />
+              <xs:element name="InitialAvgLoss" msprop:Generator_ColumnVarNameInTable="columnInitialAvgLoss" msprop:Generator_ColumnPropNameInRow="InitialAvgLoss" msprop:Generator_ColumnPropNameInTable="InitialAvgLossColumn" msprop:Generator_UserColumnName="InitialAvgLoss" type="xs:double" />
+              <xs:element name="DecayFactor" msprop:Generator_ColumnVarNameInTable="columnDecayFactor" msprop:Generator_ColumnPropNameInRow="DecayFactor" msprop:Generator_ColumnPropNameInTable="DecayFactorColumn" msprop:Generator_UserColumnName="DecayFactor" type="xs:double" />
+              <xs:element name="DecayAfterEpochs" msprop:Generator_ColumnVarNameInTable="columnDecayAfterEpochs" msprop:Generator_ColumnPropNameInRow="DecayAfterEpochs" msprop:Generator_ColumnPropNameInTable="DecayAfterEpochsColumn" msprop:Generator_UserColumnName="DecayAfterEpochs" type="xs:int" />
+              <xs:element name="WeightSaveTreshold" msprop:Generator_ColumnVarNameInTable="columnWeightSaveTreshold" msprop:Generator_ColumnPropNameInRow="WeightSaveTreshold" msprop:Generator_ColumnPropNameInTable="WeightSaveTresholdColumn" msprop:Generator_UserColumnName="WeightSaveTreshold" type="xs:double" />
+              <xs:element name="Distorted" msprop:Generator_ColumnVarNameInTable="columnDistorted" msprop:Generator_ColumnPropNameInRow="Distorted" msprop:Generator_ColumnPropNameInTable="DistortedColumn" msprop:Generator_UserColumnName="Distorted" type="xs:boolean" />
+              <xs:element name="DistortionPercentage" msprop:Generator_ColumnVarNameInTable="columnDistortionPercentage" msprop:Generator_ColumnPropNameInRow="DistortionPercentage" msprop:Generator_ColumnPropNameInTable="DistortionPercentageColumn" msprop:Generator_UserColumnName="DistortionPercentage" type="xs:int" />
+              <xs:element name="SeverityFactor" msprop:Generator_ColumnVarNameInTable="columnSeverityFactor" msprop:Generator_ColumnPropNameInRow="SeverityFactor" msprop:Generator_ColumnPropNameInTable="SeverityFactorColumn" msprop:Generator_UserColumnName="SeverityFactor" type="xs:double" />
+              <xs:element name="MaxScaling" msprop:Generator_ColumnVarNameInTable="columnMaxScaling" msprop:Generator_ColumnPropNameInRow="MaxScaling" msprop:Generator_ColumnPropNameInTable="MaxScalingColumn" msprop:Generator_UserColumnName="MaxScaling" type="xs:double" />
+              <xs:element name="MaxRotation" msprop:Generator_ColumnVarNameInTable="columnMaxRotation" msprop:Generator_ColumnPropNameInRow="MaxRotation" msprop:Generator_ColumnPropNameInTable="MaxRotationColumn" msprop:Generator_UserColumnName="MaxRotation" type="xs:double" />
+              <xs:element name="ElasticSigma" msprop:Generator_ColumnVarNameInTable="columnElasticSigma" msprop:Generator_ColumnPropNameInRow="ElasticSigma" msprop:Generator_ColumnPropNameInTable="ElasticSigmaColumn" msprop:Generator_UserColumnName="ElasticSigma" type="xs:double" />
+              <xs:element name="ElasticScaling" msprop:Generator_ColumnVarNameInTable="columnElasticScaling" msprop:Generator_ColumnPropNameInRow="ElasticScaling" msprop:Generator_ColumnPropNameInTable="ElasticScalingColumn" msprop:Generator_UserColumnName="ElasticScaling" type="xs:double" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TrainingStrategies" msprop:Generator_TableClassName="TrainingStrategiesDataTable" msprop:Generator_TableVarName="tableTrainingStrategies" msprop:Generator_RowChangedName="TrainingStrategiesRowChanged" msprop:Generator_TablePropName="TrainingStrategies" msprop:Generator_RowDeletingName="TrainingStrategiesRowDeleting" msprop:Generator_RowChangingName="TrainingStrategiesRowChanging" msprop:Generator_RowEvHandlerName="TrainingStrategiesRowChangeEventHandler" msprop:Generator_RowDeletedName="TrainingStrategiesRowDeleted" msprop:Generator_RowClassName="TrainingStrategiesRow" msprop:Generator_UserTableName="TrainingStrategies" msprop:Generator_RowEvArgName="TrainingStrategiesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TrainingStrategy" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnTrainingStrategy" msprop:Generator_ColumnPropNameInRow="TrainingStrategy" msprop:Generator_ColumnPropNameInTable="TrainingStrategyColumn" msprop:Generator_UserColumnName="TrainingStrategy" type="xs:int" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Weights" msprop:Generator_TableClassName="WeightsDataTable" msprop:Generator_TableVarName="tableWeights" msprop:Generator_RowChangedName="WeightsRowChanged" msprop:Generator_TablePropName="Weights" msprop:Generator_RowDeletingName="WeightsRowDeleting" msprop:Generator_RowChangingName="WeightsRowChanging" msprop:Generator_RowEvHandlerName="WeightsRowChangeEventHandler" msprop:Generator_RowDeletedName="WeightsRowDeleted" msprop:Generator_RowClassName="WeightsRow" msprop:Generator_UserTableName="Weights" msprop:Generator_RowEvArgName="WeightsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NetworkIndex" msprop:Generator_ColumnVarNameInTable="columnNetworkIndex" msprop:Generator_ColumnPropNameInRow="NetworkIndex" msprop:Generator_ColumnPropNameInTable="NetworkIndexColumn" msprop:Generator_UserColumnName="NetworkIndex" type="xs:unsignedByte" />
+              <xs:element name="LayerIndex" msprop:Generator_ColumnVarNameInTable="columnLayerIndex" msprop:Generator_ColumnPropNameInRow="LayerIndex" msprop:Generator_ColumnPropNameInTable="LayerIndexColumn" msprop:Generator_UserColumnName="LayerIndex" type="xs:unsignedByte" />
+              <xs:element name="WeightIndex" msprop:Generator_ColumnVarNameInTable="columnWeightIndex" msprop:Generator_ColumnPropNameInRow="WeightIndex" msprop:Generator_ColumnPropNameInTable="WeightIndexColumn" msprop:Generator_UserColumnName="WeightIndex" type="xs:int" />
+              <xs:element name="Value" msprop:Generator_ColumnVarNameInTable="columnValue" msprop:Generator_ColumnPropNameInRow="Value" msprop:Generator_ColumnPropNameInTable="ValueColumn" msprop:Generator_UserColumnName="Value" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ActivationFunctions" />
+      <xs:field xpath="mstns:ActivationFunction" />
+    </xs:unique>
+    <xs:unique name="Connections_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Connections" />
+      <xs:field xpath="mstns:NetworkIndex" />
+      <xs:field xpath="mstns:LayerIndex" />
+      <xs:field xpath="mstns:NeuronIndex" />
+      <xs:field xpath="mstns:ConnectionIndex" />
+    </xs:unique>
+    <xs:unique name="DataProviderSets_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataProviderSets" />
+      <xs:field xpath="mstns:DataProviderSet" />
+    </xs:unique>
+    <xs:unique name="Layers_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Layers" />
+      <xs:field xpath="mstns:NetworkIndex" />
+      <xs:field xpath="mstns:LayerIndex" />
+    </xs:unique>
+    <xs:unique name="LayerTypes_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:LayerTypes" />
+      <xs:field xpath="mstns:LayerType" />
+    </xs:unique>
+    <xs:unique name="LossFunctions_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:LossFunctions" />
+      <xs:field xpath="mstns:LossFunction" />
+    </xs:unique>
+    <xs:unique name="Mappings_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Mappings" />
+      <xs:field xpath="mstns:NetworkIndex" />
+      <xs:field xpath="mstns:LayerIndex" />
+      <xs:field xpath="mstns:PreviousMapIndex" />
+      <xs:field xpath="mstns:CurrentMapIndex" />
+    </xs:unique>
+    <xs:unique name="NeuralNetworks_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:NeuralNetworks" />
+      <xs:field xpath="mstns:NetworkIndex" />
+    </xs:unique>
+    <xs:unique name="Neurons_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Neurons" />
+      <xs:field xpath="mstns:NetworkIndex" />
+      <xs:field xpath="mstns:LayerIndex" />
+      <xs:field xpath="mstns:NeuronIndex" />
+    </xs:unique>
+    <xs:unique name="TrainingStrategies_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TrainingStrategies" />
+      <xs:field xpath="mstns:TrainingStrategy" />
+    </xs:unique>
+    <xs:unique name="Weights_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Weights" />
+      <xs:field xpath="mstns:NetworkIndex" />
+      <xs:field xpath="mstns:LayerIndex" />
+      <xs:field xpath="mstns:WeightIndex" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK_Connections_Neurons" msdata:parent="Neurons" msdata:child="Connections" msdata:parentkey="NetworkIndex LayerIndex NeuronIndex" msdata:childkey="NetworkIndex LayerIndex NeuronIndex" msprop:Generator_UserChildTable="Connections" msprop:Generator_ChildPropName="GetConnectionsRows" msprop:Generator_UserRelationName="FK_Connections_Neurons" msprop:Generator_ParentPropName="NeuronsRowParent" msprop:Generator_RelationVarName="relationFK_Connections_Neurons" msprop:Generator_UserParentTable="Neurons" />
+      <msdata:Relationship name="FK_Layers_ActivationFunctions" msdata:parent="ActivationFunctions" msdata:child="Layers" msdata:parentkey="ActivationFunction" msdata:childkey="ActivationFunction" msprop:Generator_UserChildTable="Layers" msprop:Generator_ChildPropName="GetLayersRows" msprop:Generator_UserRelationName="FK_Layers_ActivationFunctions" msprop:Generator_RelationVarName="relationFK_Layers_ActivationFunctions" msprop:Generator_UserParentTable="ActivationFunctions" msprop:Generator_ParentPropName="ActivationFunctionsRow" />
+      <msdata:Relationship name="FK_Layers_LayerTypes" msdata:parent="LayerTypes" msdata:child="Layers" msdata:parentkey="LayerType" msdata:childkey="LayerType" msprop:Generator_UserChildTable="Layers" msprop:Generator_ChildPropName="GetLayersRows" msprop:Generator_UserRelationName="FK_Layers_LayerTypes" msprop:Generator_ParentPropName="LayerTypesRow" msprop:Generator_RelationVarName="relationFK_Layers_LayerTypes" msprop:Generator_UserParentTable="LayerTypes" />
+      <msdata:Relationship name="FK_Layers_NeuralNetworks" msdata:parent="NeuralNetworks" msdata:child="Layers" msdata:parentkey="NetworkIndex" msdata:childkey="NetworkIndex" msprop:Generator_UserChildTable="Layers" msprop:Generator_ChildPropName="GetLayersRows" msprop:Generator_UserRelationName="FK_Layers_NeuralNetworks" msprop:Generator_ParentPropName="NeuralNetworksRow" msprop:Generator_RelationVarName="relationFK_Layers_NeuralNetworks" msprop:Generator_UserParentTable="NeuralNetworks" />
+      <msdata:Relationship name="FK_Mappings_Layers" msdata:parent="Layers" msdata:child="Mappings" msdata:parentkey="NetworkIndex LayerIndex" msdata:childkey="NetworkIndex LayerIndex" msprop:Generator_UserChildTable="Mappings" msprop:Generator_ChildPropName="GetMappingsRows" msprop:Generator_UserRelationName="FK_Mappings_Layers" msprop:Generator_RelationVarName="relationFK_Mappings_Layers" msprop:Generator_UserParentTable="Layers" msprop:Generator_ParentPropName="LayersRowParent" />
+      <msdata:Relationship name="FK_NeuralNetworks_DataProviderSets" msdata:parent="DataProviderSets" msdata:child="NeuralNetworks" msdata:parentkey="DataProviderSet" msdata:childkey="DataProviderSet" msprop:Generator_UserChildTable="NeuralNetworks" msprop:Generator_ChildPropName="GetNeuralNetworksRows" msprop:Generator_UserRelationName="FK_NeuralNetworks_DataProviderSets" msprop:Generator_RelationVarName="relationFK_NeuralNetworks_DataProviderSets" msprop:Generator_UserParentTable="DataProviderSets" msprop:Generator_ParentPropName="DataProviderSetsRow" />
+      <msdata:Relationship name="FK_NeuralNetworks_LossFunctions" msdata:parent="LossFunctions" msdata:child="NeuralNetworks" msdata:parentkey="LossFunction" msdata:childkey="LossFunction" msprop:Generator_UserChildTable="NeuralNetworks" msprop:Generator_ChildPropName="GetNeuralNetworksRows" msprop:Generator_UserRelationName="FK_NeuralNetworks_LossFunctions" msprop:Generator_RelationVarName="relationFK_NeuralNetworks_LossFunctions" msprop:Generator_UserParentTable="LossFunctions" msprop:Generator_ParentPropName="LossFunctionsRow" />
+      <msdata:Relationship name="FK_NeuralNetworks_TrainingStrategies" msdata:parent="TrainingStrategies" msdata:child="NeuralNetworks" msdata:parentkey="TrainingStrategy" msdata:childkey="TrainingStrategy" msprop:Generator_UserChildTable="NeuralNetworks" msprop:Generator_ChildPropName="GetNeuralNetworksRows" msprop:Generator_UserRelationName="FK_NeuralNetworks_TrainingStrategies" msprop:Generator_ParentPropName="TrainingStrategiesRow" msprop:Generator_RelationVarName="relationFK_NeuralNetworks_TrainingStrategies" msprop:Generator_UserParentTable="TrainingStrategies" />
+      <msdata:Relationship name="FK_Neurons_Layers" msdata:parent="Layers" msdata:child="Neurons" msdata:parentkey="NetworkIndex LayerIndex" msdata:childkey="NetworkIndex LayerIndex" msprop:Generator_UserChildTable="Neurons" msprop:Generator_ChildPropName="GetNeuronsRows" msprop:Generator_UserRelationName="FK_Neurons_Layers" msprop:Generator_RelationVarName="relationFK_Neurons_Layers" msprop:Generator_UserParentTable="Layers" msprop:Generator_ParentPropName="LayersRowParent" />
+      <msdata:Relationship name="FK_Weights_Layers" msdata:parent="Layers" msdata:child="Weights" msdata:parentkey="NetworkIndex LayerIndex" msdata:childkey="NetworkIndex LayerIndex" msprop:Generator_UserChildTable="Weights" msprop:Generator_ChildPropName="GetWeightsRows" msprop:Generator_UserRelationName="FK_Weights_Layers" msprop:Generator_RelationVarName="relationFK_Weights_Layers" msprop:Generator_UserParentTable="Layers" msprop:Generator_ParentPropName="LayersRowParent" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>
