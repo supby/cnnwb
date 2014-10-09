@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace CNNWB.ConsoleApp.Test
@@ -27,19 +28,16 @@ namespace CNNWB.ConsoleApp.Test
             // Create Network LeNet5
             NeuralNetwork cnn = InitializeDefaultNeuralNetwork(_dp);
 
-            using (CNNDataSet.TrainingRatesDataTable table = new CNNDataSet.TrainingRatesDataTable())
-            {
-                table.ReadXml(@"D:\prj\cnnwb\CNNWB.Data\TrainingSchemes\LeCun.scheme-xml");
-                CNNDataSet.TrainingRatesRow row = table.Rows[0] as CNNDataSet.TrainingRatesRow;
-                _data = new TrainingRate(row.Rate, row.Epochs, row.MinimumRate, row.WeightDecayFactor, row.Momentum, row.BatchSize, row.InitialAvgLoss, row.DecayFactor, row.DecayAfterEpochs, row.WeightSaveTreshold, row.Distorted, row.DistortionPercentage, row.SeverityFactor, row.MaxScaling, row.MaxRotation, row.ElasticSigma, row.ElasticScaling);
-            }
-            cnn.AddGlobalTrainingRate(_data, true);
-
             // Train
 
             cnn.RaiseNetworkProgressEvent += cnn_RaiseNetworkProgressEvent;
-            cnn.StartTraining();
 
+            CancellationTokenSource cts = new CancellationTokenSource();
+            CancellationToken token = cts.Token;
+
+            cnn.StartTraining(token).Wait();
+
+            Console.WriteLine("-----------------------------------------");
             cnn.SaveWeights(Path.Combine(_storageDirectory, "mnist-weights.bin"));
 
             Console.ReadLine();
@@ -171,6 +169,14 @@ namespace CNNWB.ConsoleApp.Test
                                         DataProviderSets.MNIST, TrainingStrategy.SGDLevenbergMarquardt, 0.02D);
             network.MaxDegreeOfParallelism = 2;
 
+            using (CNNDataSet.TrainingRatesDataTable table = new CNNDataSet.TrainingRatesDataTable())
+            {
+                table.ReadXml(@"D:\prj\cnnwb\CNNWB.Data\TrainingSchemes\LeCun2.scheme-xml");
+                CNNDataSet.TrainingRatesRow row = table.Rows[0] as CNNDataSet.TrainingRatesRow;
+                _data = new TrainingRate(row.Rate, row.Epochs, row.MinimumRate, row.WeightDecayFactor, row.Momentum, row.BatchSize, row.InitialAvgLoss, row.DecayFactor, row.DecayAfterEpochs, row.WeightSaveTreshold, row.Distorted, row.DistortionPercentage, row.SeverityFactor, row.MaxScaling, row.MaxRotation, row.ElasticSigma, row.ElasticScaling);
+            }
+            network.AddGlobalTrainingRate(_data, true);
+
             network.AddLayer(LayerTypes.Input, 1, 32, 32);
             network.AddLayer(LayerTypes.Convolutional, ActivationFunctions.Tanh, 6, 28, 28, 5, 5);
             network.AddLayer(LayerTypes.AvgPooling, ActivationFunctions.Tanh, 6, 14, 14, 2, 2);
@@ -189,6 +195,7 @@ namespace CNNWB.ConsoleApp.Test
             network.AddLayer(LayerTypes.AvgPooling, ActivationFunctions.Tanh, 16, 5, 5, 2, 2);
             network.AddLayer(LayerTypes.Convolutional, ActivationFunctions.Tanh, 120, 1, 1, 5, 5);
             network.AddLayer(LayerTypes.FullyConnected, ActivationFunctions.Tanh, 10);
+
             network.InitializeWeights();
 
             //NeuralNetwork network = new NeuralNetwork(DataProvider, "Simard-6", 10, 0.8D, LossFunctions.MeanSquareError, DataProviderSets.MNIST, TrainingStrategy.SGDLevenbergMarquardt, 0.02D);

@@ -127,7 +127,6 @@ namespace CNNWB.CNN
 		}
 
 		private StringBuilder timeStringBuilder;
-		private static Thread workerThread;
 		private System.Timers.Timer workerTimer;
 		private object[] emptyParams;
 		
@@ -853,15 +852,10 @@ namespace CNNWB.CNN
 			OnRaiseProgressEvent(EventArgs.Empty);			
 		}
 
-		public void StartTraining()
-		{
+		public async Task StartTraining(CancellationToken cnToken)
+		{            
 			if (CurrentTaskState == TaskState.Stopped)
-			{
-				//CurrentSample = DataProvider.TrainingSamples[0];
-
-				workerThread = new Thread(new ThreadStart(TrainingTask));
-				workerThread.IsBackground = true;
-                                
+			{                   
 				workerTimer = new System.Timers.Timer(1000);
 				workerTimer.Elapsed += new ElapsedEventHandler(WorkerTimerElapsed);
 				TaskDuration.Reset();
@@ -869,22 +863,20 @@ namespace CNNWB.CNN
 
 				CurrentTaskState = TaskState.Running;
 				EpochDuration = TimeSpan.Zero;
-				workerThread.Start();
-				while (!workerThread.IsAlive) Thread.SpinWait(1);
 
 				TaskDuration.Start();
 				SampleSpeedTimer.Start();
 				workerTimer.Start();
-			}
+
+                await Task.Factory.StartNew(TrainingTask, cnToken).ContinueWith(t => { StopTraining(); });
+			}            
 		}
 
 		public void StopTraining()
 		{
 			if (CurrentTaskState != TaskState.Stopped)
 			{
-				CurrentTaskState = TaskState.Stopped;
-                
-				workerThread.Join();
+				CurrentTaskState = TaskState.Stopped;				
                 
                 TaskDuration.Stop();
                 SampleSpeedTimer.Stop();
@@ -898,8 +890,10 @@ namespace CNNWB.CNN
 			}
 		}
 
-		public void TrainingTask()
+        public void TrainingTask(object obj)
 		{
+            CancellationToken token = (CancellationToken)obj;
+
             bool calculatePseudoHessian = (TrainingStrategy == TrainingStrategy.SGDLevenbergMarquardt) || (TrainingStrategy == TrainingStrategy.SGDLevenbergMarquardtModA) || (TrainingStrategy == TrainingStrategy.MiniBatchSGDLevenbergMarquardt) || (TrainingStrategy == TrainingStrategy.MiniBatchSGDLevenbergMarquardtModA);
             double prevAvgLoss;
 			string oldSaveWeightsFileName = String.Empty;
@@ -2036,6 +2030,12 @@ namespace CNNWB.CNN
 					if (CurrentTaskState == TaskState.Stopped)
 						break;
 				}
+
+                if (token.IsCancellationRequested)
+                {
+                    StopTraining();
+                    break;
+                }
 			}
 			CurrentTaskState = TaskState.Stopped;
 		}
@@ -2084,26 +2084,22 @@ namespace CNNWB.CNN
 			return CurrentSample.Label;
 		}
 
-		public void StartTesting()
+        public async Task StartTesting(CancellationToken cnToken)
 		{
 			if (CurrentTaskState == TaskState.Stopped)
-			{
-                
-				workerThread = new Thread(new ThreadStart(TestingTask));
-				workerThread.IsBackground = true;
-                
+			{   
 				workerTimer = new System.Timers.Timer(1000);
 				workerTimer.Elapsed += new ElapsedEventHandler(WorkerTimerElapsed);
 				TaskDuration.Reset();
 				SampleSpeedTimer.Reset();
 
-				CurrentTaskState = TaskState.Running;
-				workerThread.Start();
-				while (!workerThread.IsAlive) Thread.SpinWait(1);
+				CurrentTaskState = TaskState.Running;			
 
 				TaskDuration.Start();
 				SampleSpeedTimer.Start();
 				workerTimer.Start();
+
+                await Task.Factory.StartNew(TestingTask, cnToken).ContinueWith(t => { StopTesting(); });
 			}
 		}
 
@@ -2112,10 +2108,6 @@ namespace CNNWB.CNN
 			if (CurrentTaskState != TaskState.Stopped)
 			{
 				CurrentTaskState = TaskState.Stopped;
-								
-				workerThread.Join(250);
-                if (workerThread.IsAlive)
-                    workerThread.Abort();
 
 				TaskDuration.Stop();
                 SampleSpeedTimer.Stop();
@@ -2129,8 +2121,10 @@ namespace CNNWB.CNN
 			}
 		}
 
-		public void TestingTask()
+        public void TestingTask(object obj)
 		{
+            CancellationToken token = (CancellationToken)obj;            
+
 			double totLoss = 0D;
 			int bestIndex = 0;
 			int totalSamples;
@@ -2187,6 +2181,12 @@ namespace CNNWB.CNN
 				if (CurrentTaskState != TaskState.Running)
 					if (!CheckStateChange())
 						break;
+
+                if (token.IsCancellationRequested)
+                {
+                    StopTesting();
+                    break;
+                }
 			}
 			SampleSpeedTimer.Stop();
 			CurrentTaskState = TaskState.Stopped;
