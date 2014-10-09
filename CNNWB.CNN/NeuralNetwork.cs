@@ -743,7 +743,8 @@ namespace CNNWB.CNN
 
             //return rbfImages;
 
-            throw new NotImplementedException("It took weights from images in resources");
+            //throw new NotImplementedException("It took weights from images in resources");
+            return null;
 		}
 
 		private int ArgMin()

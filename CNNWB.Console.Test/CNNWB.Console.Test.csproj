@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{953A0AC2-B26E-49DE-8B52-C52504741C9F}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{FA7D7490-F5C7-4746-A1DC-B83CDC36647D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CNNWB.Common</RootNamespace>
-    <AssemblyName>CNNWB.Common</AssemblyName>
+    <RootNamespace>CNNWB.Console.Test</RootNamespace>
+    <AssemblyName>CNNWB.Console.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,7 +34,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,14 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ColorSpaceHelper.cs" />
-    <Compile Include="Deque.cs" />
-    <Compile Include="Deque_src\Deque.cs" />
-    <Compile Include="Deque_src\Tester.cs" />
-    <Compile Include="Enums.cs" />
-    <Compile Include="MathUtil.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ThreadSafeRandom.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CNNWB.CNN\CNNWB.CNN.csproj">
+      <Project>{d8184737-1a89-48f5-9b9b-bff7a8496d49}</Project>
+      <Name>CNNWB.CNN</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CNNWB.Common\CNNWB.Common.csproj">
+      <Project>{953a0ac2-b26e-49de-8b52-c52504741c9f}</Project>
+      <Name>CNNWB.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CNNWB.Data\CNNWB.Data.csproj">
+      <Project>{3bf918b4-b9eb-4fe0-af19-2d5d029fa80d}</Project>
+      <Name>CNNWB.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

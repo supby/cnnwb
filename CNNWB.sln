@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CNNWB.CNN", "CNNWB.CNN\CNNWB.CNN.csproj", "{D8184737-1A89-48F5-9B9B-BFF7A8496D49}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CNNWB.Data", "CNNWB.Data\CNNWB.Data.csproj", "{3BF918B4-B9EB-4FE0-AF19-2D5D029FA80D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CNNWB.Common", "CNNWB.Common\CNNWB.Common.csproj", "{953A0AC2-B26E-49DE-8B52-C52504741C9F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CNNWB.Console.Test", "CNNWB.Console.Test\CNNWB.Console.Test.csproj", "{FA7D7490-F5C7-4746-A1DC-B83CDC36647D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +29,10 @@ Global
 		{953A0AC2-B26E-49DE-8B52-C52504741C9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{953A0AC2-B26E-49DE-8B52-C52504741C9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{953A0AC2-B26E-49DE-8B52-C52504741C9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA7D7490-F5C7-4746-A1DC-B83CDC36647D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA7D7490-F5C7-4746-A1DC-B83CDC36647D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA7D7490-F5C7-4746-A1DC-B83CDC36647D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA7D7490-F5C7-4746-A1DC-B83CDC36647D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

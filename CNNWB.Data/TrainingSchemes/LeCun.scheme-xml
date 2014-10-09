@@ -1,0 +1,129 @@
+<?xml version="1.0" standalone="yes"?>
+<NewDataSet>
+  <xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:MainDataTable="TrainingRates" msdata:UseCurrentLocale="true">
+      <xs:complexType>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="TrainingRates">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="Rate" type="xs:double" />
+                <xs:element name="Epochs" type="xs:int" />
+                <xs:element name="MinimumRate" type="xs:double" />
+                <xs:element name="WeightDecayFactor" type="xs:double" />
+                <xs:element name="Momentum" type="xs:double" />
+                <xs:element name="BatchSize" type="xs:int" default="1" />
+                <xs:element name="InitialAvgLoss" type="xs:double" />
+                <xs:element name="DecayFactor" type="xs:double" />
+                <xs:element name="DecayAfterEpochs" type="xs:int" />
+                <xs:element name="WeightSaveTreshold" type="xs:double" />
+                <xs:element name="Distorted" type="xs:boolean" />
+                <xs:element name="DistortionPercentage" type="xs:int" />
+                <xs:element name="SeverityFactor" type="xs:double" />
+                <xs:element name="MaxScaling" type="xs:double" />
+                <xs:element name="MaxRotation" type="xs:double" />
+                <xs:element name="ElasticSigma" type="xs:double" />
+                <xs:element name="ElasticScaling" type="xs:double" />
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:choice>
+      </xs:complexType>
+    </xs:element>
+  </xs:schema>
+  <TrainingRates>
+    <Rate>0.0005</Rate>
+    <Epochs>2</Epochs>
+    <MinimumRate>1E-07</MinimumRate>
+    <WeightDecayFactor>0.05</WeightDecayFactor>
+    <Momentum>0.9</Momentum>
+    <BatchSize>16</BatchSize>
+    <InitialAvgLoss>0.0</InitialAvgLoss>
+    <DecayFactor>1</DecayFactor>
+    <DecayAfterEpochs>1</DecayAfterEpochs>
+    <WeightSaveTreshold>10</WeightSaveTreshold>
+    <Distorted>false</Distorted>
+    <DistortionPercentage>100</DistortionPercentage>
+    <SeverityFactor>1</SeverityFactor>
+    <MaxScaling>15</MaxScaling>
+    <MaxRotation>10</MaxRotation>
+    <ElasticSigma>8</ElasticSigma>
+    <ElasticScaling>0.5</ElasticScaling>
+  </TrainingRates>
+  <TrainingRates>
+    <Rate>0.0002</Rate>
+    <Epochs>3</Epochs>
+    <MinimumRate>1E-07</MinimumRate>
+    <WeightDecayFactor>0.05</WeightDecayFactor>
+    <Momentum>0.9</Momentum>
+    <BatchSize>16</BatchSize>
+    <InitialAvgLoss>0.0</InitialAvgLoss>
+    <DecayFactor>1</DecayFactor>
+    <DecayAfterEpochs>1</DecayAfterEpochs>
+    <WeightSaveTreshold>10</WeightSaveTreshold>
+    <Distorted>false</Distorted>
+    <DistortionPercentage>100</DistortionPercentage>
+    <SeverityFactor>1</SeverityFactor>
+    <MaxScaling>15</MaxScaling>
+    <MaxRotation>10</MaxRotation>
+    <ElasticSigma>8</ElasticSigma>
+    <ElasticScaling>0.5</ElasticScaling>
+  </TrainingRates>
+  <TrainingRates>
+    <Rate>0.0001</Rate>
+    <Epochs>3</Epochs>
+    <MinimumRate>1E-07</MinimumRate>
+    <WeightDecayFactor>0.05</WeightDecayFactor>
+    <Momentum>0.9</Momentum>
+    <BatchSize>16</BatchSize>
+    <InitialAvgLoss>0.0</InitialAvgLoss>
+    <DecayFactor>1</DecayFactor>
+    <DecayAfterEpochs>1</DecayAfterEpochs>
+    <WeightSaveTreshold>10</WeightSaveTreshold>
+    <Distorted>false</Distorted>
+    <DistortionPercentage>100</DistortionPercentage>
+    <SeverityFactor>1</SeverityFactor>
+    <MaxScaling>15</MaxScaling>
+    <MaxRotation>10</MaxRotation>
+    <ElasticSigma>8</ElasticSigma>
+    <ElasticScaling>0.5</ElasticScaling>
+  </TrainingRates>
+  <TrainingRates>
+    <Rate>5E-05</Rate>
+    <Epochs>4</Epochs>
+    <MinimumRate>1E-07</MinimumRate>
+    <WeightDecayFactor>0.05</WeightDecayFactor>
+    <Momentum>0.9</Momentum>
+    <BatchSize>16</BatchSize>
+    <InitialAvgLoss>0.0</InitialAvgLoss>
+    <DecayFactor>1</DecayFactor>
+    <DecayAfterEpochs>1</DecayAfterEpochs>
+    <WeightSaveTreshold>10</WeightSaveTreshold>
+    <Distorted>false</Distorted>
+    <DistortionPercentage>100</DistortionPercentage>
+    <SeverityFactor>1</SeverityFactor>
+    <MaxScaling>15</MaxScaling>
+    <MaxRotation>10</MaxRotation>
+    <ElasticSigma>8</ElasticSigma>
+    <ElasticScaling>0.5</ElasticScaling>
+  </TrainingRates>
+  <TrainingRates>
+    <Rate>1E-05</Rate>
+    <Epochs>8</Epochs>
+    <MinimumRate>1E-07</MinimumRate>
+    <WeightDecayFactor>0.05</WeightDecayFactor>
+    <Momentum>0.9</Momentum>
+    <BatchSize>16</BatchSize>
+    <InitialAvgLoss>0.0</InitialAvgLoss>
+    <DecayFactor>1</DecayFactor>
+    <DecayAfterEpochs>1</DecayAfterEpochs>
+    <WeightSaveTreshold>10</WeightSaveTreshold>
+    <Distorted>false</Distorted>
+    <DistortionPercentage>100</DistortionPercentage>
+    <SeverityFactor>1</SeverityFactor>
+    <MaxScaling>15</MaxScaling>
+    <MaxRotation>10</MaxRotation>
+    <ElasticSigma>8</ElasticSigma>
+    <ElasticScaling>0.5</ElasticScaling>
+  </TrainingRates>
+</NewDataSet>
