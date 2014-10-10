@@ -32,8 +32,8 @@
     </xs:element>
   </xs:schema>
   <TrainingRates>
-    <Rate>0.0005</Rate>
-    <Epochs>20</Epochs>
+    <Rate>0.0002</Rate>
+    <Epochs>5</Epochs>
     <MinimumRate>1E-07</MinimumRate>
     <WeightDecayFactor>0.05</WeightDecayFactor>
     <Momentum>0.9</Momentum>
