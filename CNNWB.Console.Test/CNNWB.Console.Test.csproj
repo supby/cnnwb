@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -49,15 +49,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CNNWB.CNN\CNNWB.CNN.csproj">
-      <Project>{d8184737-1a89-48f5-9b9b-bff7a8496d49}</Project>
+      <Project>{D8184737-1A89-48F5-9B9B-BFF7A8496D49}</Project>
       <Name>CNNWB.CNN</Name>
     </ProjectReference>
     <ProjectReference Include="..\CNNWB.Common\CNNWB.Common.csproj">
-      <Project>{953a0ac2-b26e-49de-8b52-c52504741c9f}</Project>
+      <Project>{953A0AC2-B26E-49DE-8B52-C52504741C9F}</Project>
       <Name>CNNWB.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\CNNWB.Data\CNNWB.Data.csproj">
-      <Project>{3bf918b4-b9eb-4fe0-af19-2d5d029fa80d}</Project>
+      <Project>{3BF918B4-B9EB-4FE0-AF19-2D5D029FA80D}</Project>
       <Name>CNNWB.Data</Name>
     </ProjectReference>
   </ItemGroup>

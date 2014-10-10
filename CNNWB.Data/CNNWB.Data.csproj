@@ -49,7 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CNNWB.Common\CNNWB.Common.csproj">
-      <Project>{953a0ac2-b26e-49de-8b52-c52504741c9f}</Project>
+      <Project>{953A0AC2-B26E-49DE-8B52-C52504741C9F}</Project>
       <Name>CNNWB.Common</Name>
     </ProjectReference>
   </ItemGroup>

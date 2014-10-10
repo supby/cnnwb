@@ -35,11 +35,16 @@ namespace CNNWB.ConsoleApp.Test
             CancellationTokenSource cts = new CancellationTokenSource();
             CancellationToken token = cts.Token;
 
-            cnn.StartTraining(token).Wait();
+            //cnn.StartTraining(token).Wait();
 
-            Console.WriteLine("-----------------------------------------");
-            cnn.SaveWeights(Path.Combine(_storageDirectory, "mnist-weights.bin"));
+            //Console.WriteLine("-----------------------------------------");
+            //cnn.SaveWeights(Path.Combine(_storageDirectory, "mnist-weights.bin"));
 
+			cnn.LoadWeights (Path.Combine (_storageDirectory, "mnist-weights.bin"));
+			cnn.TestParameters = new TestingParameters (false, false, 0, 0, 0, 0, 0, 0);
+			cnn.StartTesting (token).Wait ();
+
+			Console.WriteLine ("Press Enter to finish ... ");
             Console.ReadLine();
 
         }
@@ -78,31 +83,24 @@ namespace CNNWB.ConsoleApp.Test
                 case NetworkStates.Testing:
                     Console.WriteLine();
                     Console.WriteLine("Testing...");
-                    //if (testingPVM.UseTrainingSet)
-                    //{
-                    //    taskBarItemInfo.ProgressValue = (double)(pageViewModel.NeuralNetwork.SampleIndex + 1) / pageViewModel.DataProvider.TrainingSamplesCount;
-                    //    MainView.ProgressBar.Maximum = pageViewModel.DataProvider.TrainingSamplesCount;
-                    //    if (pageViewModel.NeuralNetwork.SampleIndex < pageViewModel.DataProvider.TrainingSamplesCount)
-                    //        testingPVM.SampleImage = pageViewModel.DataProvider.TrainingSamples[pageViewModel.NeuralNetwork.SampleIndex].GetBitmapSource(pageViewModel.DataProvider);
-                    //}
-                    //else
-                    //{
-                    //    taskBarItemInfo.ProgressValue = (double)(pageViewModel.NeuralNetwork.SampleIndex + 1) / pageViewModel.DataProvider.TestingSamplesCount;
-                    //    MainView.ProgressBar.Maximum = pageViewModel.DataProvider.TestingSamplesCount;
-                    //    if (pageViewModel.NeuralNetwork.SampleIndex < pageViewModel.DataProvider.TestingSamplesCount)
-                    //        testingPVM.SampleImage = pageViewModel.DataProvider.TestingSamples[pageViewModel.NeuralNetwork.SampleIndex].GetBitmapSource(pageViewModel.DataProvider);
-                    //}
-                    //MainView.ProgressBar.Value = pageViewModel.NeuralNetwork.SampleIndex;
-                    //progressText.Length = 0;
-                    //{
-                    //    double testAccuracy = (double)((pageViewModel.NeuralNetwork.SampleIndex + 1) - pageViewModel.NeuralNetwork.TestErrors) * (100D / (pageViewModel.NeuralNetwork.SampleIndex + 1));
-                    //    progressText.AppendFormat(CultureInfo.CurrentUICulture, "\nSample Index:\t{0:G}\nAverage Loss:\t{1:N10}\nTest Error %:\t{2:N4}\nTest Errors:\t{3:G}\nAccuracy %:\t{4:N4}", pageViewModel.NeuralNetwork.SampleIndex, pageViewModel.NeuralNetwork.AvgTestLoss, 100D - testAccuracy, pageViewModel.NeuralNetwork.TestErrors, testAccuracy);
-                    //    testingPVM.ProgressText = progressText.ToString();
-                    //    if (testingPVM.DataProvider.CurrentDataSet == DataProviderSets.CIFAR10)
-                    //        testingPVM.SampleLabel = ((CIFAR10Classes)pageViewModel.NeuralNetwork.CurrentSample.Label).ToString();
-                    //    else
-                    //        testingPVM.SampleLabel = pageViewModel.NeuralNetwork.CurrentSample.Label.ToString();
-                    //}
+
+					if (NeuralNetwork.TestParameters.UseTrainingSamples)
+                    {
+						Console.WriteLine("taskBarItemInfo.ProgressValue: {0}", (double)(NeuralNetwork.SampleIndex + 1) / _dp.TrainingSamplesCount);
+						Console.WriteLine("MainView.ProgressBar.Maximum: {0}", _dp.TrainingSamplesCount);
+                    }
+                    else
+                    {
+						Console.WriteLine("taskBarItemInfo.ProgressValue: {0}", (double)(NeuralNetwork.SampleIndex + 1) / _dp.TestingSamplesCount);
+						Console.WriteLine("MainView.ProgressBar.Maximum: {0}", _dp.TestingSamplesCount);
+                    }
+					Console.WriteLine("MainView.ProgressBar.Value: {0}", NeuralNetwork.SampleIndex);
+                    
+					double testAccuracyTesting = (double)((NeuralNetwork.SampleIndex + 1) - NeuralNetwork.TestErrors) * (100D / (NeuralNetwork.SampleIndex + 1));
+					Console.WriteLine("\nSample Index:\t{0:G}\nAverage Loss:\t{1:N10}\nTest Error %:\t{2:N4}\nTest Errors:\t{3:G}\nAccuracy %:\t{4:N4}", 
+										NeuralNetwork.SampleIndex, NeuralNetwork.AvgTestLoss, 100D - testAccuracyTesting, NeuralNetwork.TestErrors, testAccuracyTesting);
+
+                    
                     break;
 
                 case NetworkStates.CalculatingTestError:
@@ -206,7 +204,7 @@ namespace CNNWB.ConsoleApp.Test
             network.AddLayer(LayerTypes.FullyConnected, ActivationFunctions.Tanh, 100);
             network.AddLayer(LayerTypes.FullyConnected, ActivationFunctions.Tanh, 10);
 
-            network.MaxDegreeOfParallelism = 3;
+            network.MaxDegreeOfParallelism = 8;
 
             network.AddGlobalTrainingRate(_data, true);
 

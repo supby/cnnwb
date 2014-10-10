@@ -64,11 +64,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CNNWB.Common\CNNWB.Common.csproj">
-      <Project>{953a0ac2-b26e-49de-8b52-c52504741c9f}</Project>
+      <Project>{953A0AC2-B26E-49DE-8B52-C52504741C9F}</Project>
       <Name>CNNWB.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\CNNWB.Data\CNNWB.Data.csproj">
-      <Project>{3bf918b4-b9eb-4fe0-af19-2d5d029fa80d}</Project>
+      <Project>{3BF918B4-B9EB-4FE0-AF19-2D5D029FA80D}</Project>
       <Name>CNNWB.Data</Name>
     </ProjectReference>
   </ItemGroup>
