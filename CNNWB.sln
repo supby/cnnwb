@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
 VisualStudioVersion = 12.0.30723.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CNNWB.CNN", "CNNWB.CNN\CNNWB.CNN.csproj", "{D8184737-1A89-48F5-9B9B-BFF7A8496D49}"
@@ -11,12 +11,23 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CNNWB.Common", "CNNWB.Commo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CNNWB.Console.Test", "CNNWB.Console.Test\CNNWB.Console.Test.csproj", "{FA7D7490-F5C7-4746-A1DC-B83CDC36647D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CNNWB.GPU", "CNNWB.GPU\CNNWB.GPU.csproj", "{FDEFE340-F266-4A78-8998-9E7B71C96E49}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Items", "Items", "{2202EAFA-A724-4485-A9AC-EEDD1EACDA8B}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D8184737-1A89-48F5-9B9B-BFF7A8496D49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8184737-1A89-48F5-9B9B-BFF7A8496D49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8184737-1A89-48F5-9B9B-BFF7A8496D49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8184737-1A89-48F5-9B9B-BFF7A8496D49}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3BF918B4-B9EB-4FE0-AF19-2D5D029FA80D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3BF918B4-B9EB-4FE0-AF19-2D5D029FA80D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BF918B4-B9EB-4FE0-AF19-2D5D029FA80D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -25,19 +36,19 @@ Global
 		{953A0AC2-B26E-49DE-8B52-C52504741C9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{953A0AC2-B26E-49DE-8B52-C52504741C9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{953A0AC2-B26E-49DE-8B52-C52504741C9F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D8184737-1A89-48F5-9B9B-BFF7A8496D49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D8184737-1A89-48F5-9B9B-BFF7A8496D49}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D8184737-1A89-48F5-9B9B-BFF7A8496D49}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D8184737-1A89-48F5-9B9B-BFF7A8496D49}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FA7D7490-F5C7-4746-A1DC-B83CDC36647D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FA7D7490-F5C7-4746-A1DC-B83CDC36647D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA7D7490-F5C7-4746-A1DC-B83CDC36647D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA7D7490-F5C7-4746-A1DC-B83CDC36647D}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = CNNWB.Console.Test\CNNWB.Console.Test.csproj
+		{FDEFE340-F266-4A78-8998-9E7B71C96E49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDEFE340-F266-4A78-8998-9E7B71C96E49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDEFE340-F266-4A78-8998-9E7B71C96E49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDEFE340-F266-4A78-8998-9E7B71C96E49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = CNNWB.Console.Test\CNNWB.Console.Test.csproj
 	EndGlobalSection
 EndGlobal

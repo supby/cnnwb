@@ -35,14 +35,13 @@ namespace CNNWB.ConsoleApp.Test
             CancellationTokenSource cts = new CancellationTokenSource();
             CancellationToken token = cts.Token;
 
-            //cnn.StartTraining(token).Wait();
+            cnn.StartTraining(token).Wait();
+            Console.WriteLine("-----------------------------------------");
+            cnn.SaveWeights(Path.Combine(_storageDirectory, "mnist-weights.bin"));
 
-            //Console.WriteLine("-----------------------------------------");
-            //cnn.SaveWeights(Path.Combine(_storageDirectory, "mnist-weights.bin"));
-
-			cnn.LoadWeights (Path.Combine (_storageDirectory, "mnist-weights.bin"));
-			cnn.TestParameters = new TestingParameters (false, false, 0, 0, 0, 0, 0, 0);
-			cnn.StartTesting (token).Wait ();
+            //cnn.LoadWeights (Path.Combine (_storageDirectory, "mnist-weights.bin"));
+            //cnn.TestParameters = new TestingParameters (false, false, 0, 0, 0, 0, 0, 0);
+            //cnn.StartTesting (token).Wait ();
 
 			Console.WriteLine ("Press Enter to finish ... ");
             Console.ReadLine();
@@ -172,10 +171,6 @@ namespace CNNWB.ConsoleApp.Test
 
             //NeuralNetwork network = new NeuralNetwork(_dp, "LeNet-5", 10, 0.8D, LossFunctions.MeanSquareError,
             //                            DataProviderSets.MNIST, TrainingStrategy.SGDLevenbergMarquardt, 0.02D);
-            //network.MaxDegreeOfParallelism = 2;
-            
-            //network.AddGlobalTrainingRate(_data, true);
-
             //network.AddLayer(LayerTypes.Input, 1, 32, 32);
             //network.AddLayer(LayerTypes.Convolutional, ActivationFunctions.Tanh, 6, 28, 28, 5, 5);
             //network.AddLayer(LayerTypes.AvgPooling, ActivationFunctions.Tanh, 6, 14, 14, 2, 2);
@@ -203,11 +198,6 @@ namespace CNNWB.ConsoleApp.Test
             network.AddLayer(LayerTypes.ConvolutionalSubsampling, ActivationFunctions.Tanh, 50, 5, 5, 5, 5);
             network.AddLayer(LayerTypes.FullyConnected, ActivationFunctions.Tanh, 100);
             network.AddLayer(LayerTypes.FullyConnected, ActivationFunctions.Tanh, 10);
-
-            network.MaxDegreeOfParallelism = 8;
-
-            network.AddGlobalTrainingRate(_data, true);
-
             network.InitializeWeights();
 
             //NeuralNetwork network = new NeuralNetwork(DataProvider, "Simard-16", 10, 0.8D, LossFunctions.MeanSquareError, DataProviderSets.MNIST, TrainingStrategy.SGDLevenbergMarquardt, 0.1D);
@@ -446,6 +436,9 @@ namespace CNNWB.ConsoleApp.Test
 
             //network.RaiseNetworkProgressEvent += new EventHandler<EventArgs>(NetworkProgressEvent);
             //network.RaiseAddUnrecognizedTestSampleEvent += new EventHandler<AddUnrecognizedTestSampleEventArgs>(AddUnrecognizedTestSampleEvent);
+
+            network.MaxDegreeOfParallelism = 8;
+            network.AddGlobalTrainingRate(_data, true);
 
             return network;
         }

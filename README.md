@@ -1,6 +1,10 @@
 cnnwb
 =====
 
+The lib is based on http://www.codeproject.com/Articles/140631/Convolutional-Neural-Network-MNIST-Workbench. 
+NN Related functionality was separated to lib and slighly refactored. Now i work to add GPU support.
+
+
 Example:
 
 	NeuralNetwork cnn = new NeuralNetwork(DataProvider, "LeNet-5", 10, 0.8D, LossFunctions.MeanSquareError, 
